@@ -1,5 +1,4 @@
 import React from 'react';
-import Welcome from "./Welcome";
 
 class LoginForm extends React.Component {
 
@@ -7,24 +6,24 @@ class LoginForm extends React.Component {
         super(props);
         this.state = {
             login: 'введите логин',
-            password: 'введите пароль'
+            password: 'введите пароль',
         };
         this.click = this.click.bind(this);
         this.click1=this.click1.bind(this);
         this.submit = this.submit.bind(this);
     }
 
-    click() {
+    click(event) {
         this.setState(
             {login: event.target.login});
     }
-    click1() {
+    click1(event) {
         this.setState(
             {password: event.target.password});
     }
 
     submit(event) {
-        alert('вход выполнен, : ' + this.state.login + '   подождите.' + ' пароль ' + this.state.password);
+        alert('вход выполнен, : ' + this.state.login + '   подождите. пароль ' + this.state.password);
         event.preventDefault();
     }
 
@@ -33,10 +32,9 @@ class LoginForm extends React.Component {
             <form onSubmit={this.submit}>
                 <label>
                     логин:
-                    <textarea value={this.state.login} onChange={this.click}/> </label>
-                <label>
+                    <textarea value={this.state.login} onChange={this.click} /> </label>
                     пароль:
-                    <textarea value={this.state.password} onChange={this.click1}/> </label>
+                    <textarea value={this.state.password} onChange={this.click1}/>
                 <input type="submit" value="Отправить"/>
             </form>
         );
