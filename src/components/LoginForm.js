@@ -13,13 +13,13 @@ class LoginForm extends React.Component {
         this.submit = this.submit.bind(this);
     }
 
-    click(event) {
+    loginChange(event) {
         this.setState(
-            {login: event.target.login});
+            {login: event.target.value});
     }
-    click1(event) {
+    passwordChange(event) {
         this.setState(
-            {password: event.target.password});
+            {password: event.target.value});
     }
 
     submit(event) {
@@ -32,9 +32,9 @@ class LoginForm extends React.Component {
             <form onSubmit={this.submit}>
                 <label>
                     логин:
-                    <textarea value={this.state.login} onChange={this.click} /> </label>
+                    <textarea value={this.state.login} onChange={this.loginChange} /> </label>
                     пароль:
-                    <textarea value={this.state.password} onChange={this.click1}/>
+                    <textarea value={this.state.password} onChange={this.passwordChange}/>
                 <input type="submit" value="Отправить"/>
             </form>
         );
