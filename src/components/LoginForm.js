@@ -8,8 +8,8 @@ class LoginForm extends React.Component {
             login: 'введите логин',
             password: 'введите пароль',
         };
-        this.click = this.click.bind(this);
-        this.click1=this.click1.bind(this);
+        this.loginChange = this.loginChange.bind(this);
+        this.passwordChange=this.passwordChange.bind(this);
         this.submit = this.submit.bind(this);
     }
 
@@ -23,7 +23,19 @@ class LoginForm extends React.Component {
     }
 
     submit(event) {
+        const axios = require('axios').default;
+        axios.post('http://localhost:8080/src/components/testServer.php', {
+          login:  this.state.login,
+          password: this.state.password
+        })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
         alert('вход выполнен, : ' + this.state.login + '   подождите. пароль ' + this.state.password);
+        alert(JSON.stringify(this.state));
         event.preventDefault();
     }
 
