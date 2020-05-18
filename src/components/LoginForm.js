@@ -1,4 +1,5 @@
 import React from 'react';
+import {BrowserRouter, Route, Switch} from "react-router-dom";
 
 class LoginForm extends React.Component {
 
@@ -32,7 +33,7 @@ class LoginForm extends React.Component {
 
     submit(event) {
         const axios = require('axios').default;
-        axios.post('http://192.168.1.49:8080/api/login',
+        axios.post('src/components/testServer.php',
             {
 
           email:  this.state.email,
@@ -61,7 +62,6 @@ class LoginForm extends React.Component {
 
     render() {
         return (
-
             <form onSubmit={this.submit}>
                 <label>
                     логин:
@@ -69,12 +69,21 @@ class LoginForm extends React.Component {
                     пароль:
                     <textarea value={this.state.password} onChange={this.passwordChange}/>
                 <input type="submit" value="Отправить"/>
+        <BrowserRouter>
+            <Switch>
+                <Route exact path="/">
+                    <button>1</button>
+                </Route>
+                <Route exact path="/tobe">
+                    <button>2</button>
+                </Route>
+            </Switch>
+        </BrowserRouter>
             </form>
-
         );
 
     }
-    
+
 }
 
 export default LoginForm;
