@@ -69,16 +69,6 @@ class LoginForm extends React.Component {
                     пароль:
                     <textarea value={this.state.password} onChange={this.passwordChange}/>
                 <input type="submit" value="Отправить"/>
-        <BrowserRouter>
-            <Switch>
-                <Route exact path="/">
-                    <button>1</button>
-                </Route>
-                <Route exact path="/tobe">
-                    <button>2</button>
-                </Route>
-            </Switch>
-        </BrowserRouter>
             </form>
         );
 
