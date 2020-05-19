@@ -11,9 +11,9 @@ ReactDOM.render(
                 <LoginForm/>
             </Route>
             <Route exact path="/tobe">
-                <Peoples email={"names"}password={"hfhdhdfgfd"}/>
-                <Peoples email={"dfd"}password={"hfhdhdfgfd"}/>
-                <Peoples email={"rere"}password={"fdfdfdfdd"}/>
+                <Peoples login={"names"}password={"hfhdhdfgfd"} firstName={"alex"}lastName={"петров"}
+                patronymic={"иванович"}position={"director"}rootPrivileges={"admin"}/>
+
             </Route>
         </Switch>
     </BrowserRouter>,

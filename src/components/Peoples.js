@@ -9,11 +9,13 @@ class Peoples extends React.Component {
 
 
         this.state = {
-            firstName: "Имя",
-            lastName: "Фамилия",
-            patronymic: "Отчество",
-            position: "Должность",
-            rootPrivileges: "Права администратора",
+            login: "Логин :",
+            password: "Пароль :",
+            firstName: "Имя :",
+            lastName: "Фамилия :",
+            patronymic: "Отчество :",
+            position: "Должность :",
+            rootPrivileges: "Права администратора :",
 
         }
 
@@ -23,22 +25,39 @@ class Peoples extends React.Component {
     render() {
         return (
             <div>
-                <div>
-                    <p> {this.props.email}</p>
-                    <p> {this.props.password}</p>
-                    <p> {this.state.firstName}</p>
-                    <p> {this.state.lastName}</p>
-                    <p> {this.state.patronymic}</p>
-                    <p> {this.state.position}</p>
-                    <p> {this.state.rootPrivileges}</p>
-                </div>
-                <div>
+                <table border={"5"} width={"50%"} >
+                    <td >
+                        <tr > {this.state.login}</tr>
+                        <tr> {this.state.password}</tr>
+                        <tr> {this.state.firstName}</tr>
+                        <tr> {this.state.lastName}</tr>
+                        <tr> {this.state.patronymic}</tr>
+                        <tr> {this.state.position}</tr>
+                        <tr> {this.state.rootPrivileges}</tr>
+                    </td>
+                    <td>
+                        <tr> {this.props.login}</tr>
+                        <tr> {this.props.password}</tr>
+                        <tr> {this.props.firstName}</tr>
+                        <tr> {this.props.lastName}</tr>
+                        <tr> {this.props.patronymic}</tr>
+                        <tr> {this.props.position}</tr>
+                        <tr> {this.props.rootPrivileges}</tr>
+                    </td>
+                <td>
+                    <tr>
                     <button>
                         сменить пароль
                     </button>
+                    </tr>
+                    <tr>
                     <button>редактировать профиль</button>
-                    <button>удалить профиль</button>
-                </div>
+                    </tr>
+                    <tr >
+                    <button >удалить профиль</button>
+                    </tr>
+                </td>
+                </table>
             </div>
         );
 
