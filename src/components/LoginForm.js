@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter, Route, Switch} from "react-router-dom";
+import Peoples from "./Peoples";
 
 class LoginForm extends React.Component {
 
@@ -33,7 +33,7 @@ class LoginForm extends React.Component {
 
     submit(event) {
         const axios = require('axios').default;
-        axios.post('src/components/testServer.php',
+        axios.post('src/components/Peoples.js',
             {
 
           email:  this.state.email,
@@ -42,9 +42,8 @@ class LoginForm extends React.Component {
         },
             {withCredentials: true})
 
-            .then(function (response) {
-                console.log(response.config.data);
-                console.log("32");
+            .then(function (responnse ) {
+               responnse.data
 
             })
 
